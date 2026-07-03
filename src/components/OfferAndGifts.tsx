@@ -1,8 +1,8 @@
 const GIFTS = [
   {
     image: "/gifts/gift-1.jpg",
-    name: "Emerald Bloom Necklace",
-    price: 42500,
+    name: "Triple Row Diamond Necklace",
+    price: 52500,
   },
   {
     image: "/gifts/gift-2.jpg",
