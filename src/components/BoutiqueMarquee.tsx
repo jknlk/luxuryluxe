@@ -3,18 +3,20 @@
 import { useEffect, useState } from "react";
 
 const LOOKS = [
-  "/marquee/look-01.png",
-  "/marquee/look-02.png",
-  "/marquee/look-03.png",
-  "/marquee/look-04.png",
-  "/marquee/look-05.png",
-  "/marquee/look-06.png",
-  "/marquee/look-07.png",
-  "/marquee/look-08.png",
-  "/marquee/look-09.png",
+  { src: "/marquee/look-01.png", price: 56500 },
+  { src: "/marquee/look-02.png", price: 49900 },
+  { src: "/marquee/look-03.png", price: 63000 },
+  { src: "/marquee/look-04.png", price: 71500 },
+  { src: "/marquee/look-05.png", price: 58200 },
+  { src: "/marquee/look-06.png", price: 45800 },
+  { src: "/marquee/look-07.png", price: 52400 },
+  { src: "/marquee/look-08.png", price: 67900 },
+  { src: "/marquee/look-09.png", price: 60500 },
 ];
 
 const FEATURES = ["Handcrafted", "Pure Silk", "Zardozi Work", "Made To Order"];
+
+const formatINR = (amount: number) => `₹${amount.toLocaleString("en-IN")}`;
 
 export default function BoutiqueMarquee() {
   const duration = LOOKS.length * 4.5;
@@ -34,12 +36,12 @@ export default function BoutiqueMarquee() {
   }, [selected]);
 
   return (
-    <section className="bg-blush py-16 md:py-24">
+    <section className="bg-plum py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6 text-center">
         <p className="text-xs uppercase tracking-[0.4em] text-gold">
           Fresh Off The Runway
         </p>
-        <h2 className="mt-3 font-display text-3xl font-medium text-ink sm:text-4xl md:text-5xl">
+        <h2 className="mt-3 font-display text-3xl font-medium text-cream sm:text-4xl md:text-5xl">
           Looks From The Latest Edit
         </h2>
       </div>
@@ -49,21 +51,34 @@ export default function BoutiqueMarquee() {
           className="flex w-max animate-marquee gap-6 group-hover:[animation-play-state:paused]"
           style={{ animationDuration: `${duration}s` }}
         >
-          {[...LOOKS, ...LOOKS].map((src, i) => (
-            <button
+          {[...LOOKS, ...LOOKS].map((look, i) => (
+            <div
               key={i}
-              type="button"
-              onClick={() => setSelected(src)}
-              aria-label="View full look"
-              className="flex h-64 w-48 shrink-0 cursor-zoom-in items-center justify-center rounded-2xl bg-ivory shadow-lg transition hover:shadow-xl sm:h-80 sm:w-60"
+              className="flex w-48 shrink-0 flex-col rounded-2xl bg-ivory shadow-lg transition hover:shadow-xl sm:w-60"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={src}
-                alt="Lehenga Luxe look"
-                className="h-full w-full object-contain p-3"
-              />
-            </button>
+              <button
+                type="button"
+                onClick={() => setSelected(look.src)}
+                aria-label="View full look"
+                className="flex h-64 w-full cursor-zoom-in items-center justify-center sm:h-80"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={look.src}
+                  alt="Lehenga Luxe look"
+                  className="h-full w-full object-contain p-3"
+                />
+              </button>
+              <p className="text-center font-display text-lg text-ink">
+                {formatINR(look.price)}
+              </p>
+              <button
+                type="button"
+                className="mx-3 mt-2 mb-3 rounded-full bg-ink py-2 text-[11px] tracking-[0.2em] text-cream uppercase transition hover:bg-gold hover:text-ink"
+              >
+                Buy Now
+              </button>
+            </div>
           ))}
         </div>
       </div>
@@ -72,14 +87,14 @@ export default function BoutiqueMarquee() {
         {FEATURES.map((f) => (
           <span
             key={f}
-            className="rounded-full border border-ink/20 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-ink/70"
+            className="rounded-full border border-cream/25 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-cream/70"
           >
             {f}
           </span>
         ))}
       </div>
 
-      <p className="mx-auto mt-6 max-w-xl px-6 text-center text-sm font-light text-ink/70">
+      <p className="mx-auto mt-6 max-w-xl px-6 text-center text-sm font-light text-cream/70">
         Every Lehenga Luxe piece is hand-finished in our atelier — a legacy of
         craftsmanship, one stitch at a time.
       </p>

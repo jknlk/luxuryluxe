@@ -164,12 +164,12 @@ export default function ProductShowcase() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-ivory text-ink"
+      className="relative bg-ink text-cream"
       style={{ height: `${PRODUCTS.length * 100}vh` }}
     >
       <div className="sticky top-0 flex h-screen w-full flex-col overflow-hidden md:flex-row">
-        <div className="relative h-[48vh] w-full shrink-0 bg-ivory md:h-screen md:w-1/2">
-          <span className="pointer-events-none absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 select-none font-display text-[140px] font-bold text-ink/5 md:text-[280px]">
+        <div className="relative h-[48vh] w-full shrink-0 bg-ink md:h-screen md:w-1/2">
+          <span className="pointer-events-none absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 select-none font-display text-[140px] font-bold text-cream/5 md:text-[280px]">
             {String(active + 1).padStart(2, "0")}
           </span>
           {PRODUCTS.map((p, i) => (
@@ -189,22 +189,22 @@ export default function ProductShowcase() {
           ))}
         </div>
 
-        <div className="relative z-40 flex w-full flex-1 flex-col justify-center bg-cream px-8 py-6 md:h-screen md:w-1/2 md:px-16 md:py-0">
+        <div className="relative z-40 flex w-full flex-1 flex-col justify-center bg-espresso px-8 py-6 md:h-screen md:w-1/2 md:px-16 md:py-0">
           <p className="text-[11px] uppercase tracking-[0.35em] text-gold">
             The Collection
           </p>
-          <h3 className="mt-2 font-display text-2xl font-medium md:mt-3 md:text-4xl">
+          <h3 className="mt-2 font-display text-2xl font-medium text-cream md:mt-3 md:text-4xl">
             {product.name}
           </h3>
           <p className="mt-2 font-display text-xl text-gold md:mt-4 md:text-2xl">
             {formatINR(product.price)}
           </p>
-          <p className="mt-3 max-w-sm text-sm text-ink/70 md:mt-4">
+          <p className="mt-3 max-w-sm text-sm text-cream/70 md:mt-4">
             {product.description}
           </p>
 
           <div className="mt-5 md:mt-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-ink/60">
+            <p className="text-xs uppercase tracking-[0.25em] text-cream/60">
               Select Size
             </p>
             <div className="mt-3 flex gap-2">
@@ -214,8 +214,8 @@ export default function ProductShowcase() {
                   onClick={() => setSize(s)}
                   className={`h-9 w-9 rounded-full border text-xs transition md:h-10 md:w-10 ${
                     size === s
-                      ? "border-ink bg-ink text-cream"
-                      : "border-ink/30 text-ink/70 hover:border-ink"
+                      ? "border-cream bg-cream text-ink"
+                      : "border-cream/30 text-cream/70 hover:border-cream"
                   }`}
                 >
                   {s}
@@ -225,7 +225,7 @@ export default function ProductShowcase() {
           </div>
 
           <div className="mt-5 md:mt-6">
-            <p className="text-xs uppercase tracking-[0.25em] text-ink/60">
+            <p className="text-xs uppercase tracking-[0.25em] text-cream/60">
               Select Colour
             </p>
             <div className="mt-3 flex gap-3">
@@ -236,7 +236,9 @@ export default function ProductShowcase() {
                   aria-label={c.name}
                   style={{ background: c.hex }}
                   className={`h-7 w-7 rounded-full border-2 transition ${
-                    colorIdx === i ? "scale-110 border-ink" : "border-transparent"
+                    colorIdx === i
+                      ? "scale-110 border-cream"
+                      : "border-transparent"
                   }`}
                 />
               ))}
@@ -244,10 +246,10 @@ export default function ProductShowcase() {
           </div>
 
           <div className="mt-7 flex gap-3 md:mt-10">
-            <button className="flex flex-1 items-center justify-center gap-2 rounded-full bg-gold py-3.5 text-xs uppercase tracking-[0.3em] text-ink transition hover:bg-ink hover:text-cream md:py-4">
+            <button className="flex flex-1 items-center justify-center gap-2 rounded-full bg-gold py-3.5 text-xs uppercase tracking-[0.3em] text-ink transition hover:bg-cream md:py-4">
               Buy Now
             </button>
-            <button className="flex flex-1 items-center justify-center gap-2 rounded-full bg-ink py-3.5 text-xs uppercase tracking-[0.3em] text-cream transition hover:bg-gold hover:text-ink md:py-4">
+            <button className="flex flex-1 items-center justify-center gap-2 rounded-full border border-cream/40 py-3.5 text-xs uppercase tracking-[0.3em] text-cream transition hover:border-cream hover:bg-cream hover:text-ink md:py-4">
               Add to Cart
             </button>
           </div>
@@ -257,7 +259,7 @@ export default function ProductShowcase() {
               <span
                 key={i}
                 className={`h-1.5 rounded-full transition-all ${
-                  active === i ? "w-8 bg-ink" : "w-1.5 bg-ink/20"
+                  active === i ? "w-8 bg-cream" : "w-1.5 bg-cream/20"
                 }`}
               />
             ))}

@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #241a15;
-  --color-cream: #f7f1e6;
-  --color-ivory: #f8f4ec;
-  --color-blush: #f4e1e6;
-  --color-gold: #b98a3d;
+  /* Burgundy + Beige palette (Pantone Blood Red / Bleached Sand) */
+  --color-ink: #5c0f1a; /* Blood Red */
+  --color-espresso: #7a1a26; /* Blood Red, lightened */
+  --color-plum: #8c3b42; /* Muted rosy burgundy */
+  --color-cream: #d8c5a5; /* Bleached Sand */
+  --color-ivory: #eee4d3; /* Bleached Sand, lightened */
+  --color-gold: #c9a66b; /* Warm tan accent */
   --font-display: var(--font-playfair);
   --font-body: var(--font-inter);
 }
 
 @theme inline {
   --color-ink: var(--color-ink);
+  --color-espresso: var(--color-espresso);
+  --color-plum: var(--color-plum);
   --color-cream: var(--color-cream);
   --color-ivory: var(--color-ivory);
-  --color-blush: var(--color-blush);
   --color-gold: var(--color-gold);
   --font-display: var(--font-display);
   --font-body: var(--font-body);

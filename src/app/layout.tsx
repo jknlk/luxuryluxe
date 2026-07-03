@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, Alex_Brush } from "next/font/google";
 import Preloader from "@/components/Preloader";
+import Header from "@/components/Header";
+import PressStrip from "@/components/PressStrip";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -38,7 +41,10 @@ export default function RootLayout({
         className={`${playfair.variable} ${inter.variable} ${alexBrush.variable} antialiased`}
       >
         <Preloader />
+        <Header />
         {children}
+        <PressStrip />
+        <Footer />
       </body>
     </html>
   );
