@@ -36,7 +36,7 @@ export default function BoutiqueMarquee() {
   }, [selected]);
 
   return (
-    <section className="bg-plum py-16 md:py-24">
+    <section className="bg-espresso py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6 text-center">
         <p className="text-xs uppercase tracking-[0.4em] text-gold">
           Fresh Off The Runway

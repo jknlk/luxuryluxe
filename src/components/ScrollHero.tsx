@@ -130,7 +130,7 @@ export default function ScrollHero() {
           <h1 className="font-display text-5xl font-medium text-cream sm:text-7xl md:text-8xl">
             Lehenga Luxe
           </h1>
-          <p className="mt-6 max-w-md font-body text-base font-light text-cream/80 sm:text-lg">
+          <p className="mt-6 max-w-md font-body text-base font-bold text-espresso sm:text-lg">
             Heritage craftsmanship, hand-embroidered for the moments you&apos;ll
             never forget.
           </p>
@@ -146,7 +146,7 @@ export default function ScrollHero() {
           className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-end px-6 pb-20 text-center"
           style={{ opacity: closeUpOpacity }}
         >
-          <h2 className="font-display text-3xl font-medium text-cream sm:text-5xl">
+          <h2 className="font-display text-3xl font-medium text-espresso sm:text-5xl">
             Every Detail, Handworked
           </h2>
           <p className="mt-4 max-w-md font-body text-sm font-light text-cream/80 sm:text-base">
